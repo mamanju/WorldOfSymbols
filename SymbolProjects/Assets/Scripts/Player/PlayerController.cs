@@ -127,6 +127,18 @@ public class PlayerController : MonoBehaviour
     private bool spearThrowTimeFlag = false;
     // 槍を投げている時に槍を投げる動作をするとエラーが出るので防ぐ為のFlag
     private bool secondSpearPreventFlag = true;
+
+    private bool moveFlag = true;
+
+    /// <summary>
+    /// プレイヤー移動のコントローラー操作フラグ
+    /// </summary>
+    public bool MoveFlag
+    {
+        get { return moveFlag; }
+        set { moveFlag = value; }
+    }
+
     public bool SecondSpearPreventFlag
     {
         get { return secondSpearPreventFlag; }
@@ -141,12 +153,10 @@ public class PlayerController : MonoBehaviour
         get { return shildFlag; }
     }
 
-    private void Awake()
-    {
-        instance = this;
-    }
-
-    void Start()
+    /// <summary>
+    /// 初期化
+    /// </summary>
+    private void Init()
     {
         synthesisGUI.SetActive(false);
         playerRb = GetComponent<Rigidbody>();
@@ -170,8 +180,22 @@ public class PlayerController : MonoBehaviour
         climbClliderTime = max_climbClliderTime;
     }
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start()
+    {
+        Init();
+    }
+
     void Update()
     {
+        if(!moveFlag)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Triangle") && synthesisGUI.activeSelf == false)
         {
             synthesisGUI.SetActive(!synthesisGUI.activeSelf);
@@ -309,6 +333,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!moveFlag)
+        {
+            return;
+        }
+
         if (knockBack.KnockbackFlag == true) { return; }
 
         cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;

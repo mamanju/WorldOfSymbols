@@ -38,16 +38,16 @@ public class ClimbTreeController : MonoBehaviour
     private IEnumerator ClimbCoroutine(GameObject player)
     {
         climbFlag = true;
-
-        Time.timeScale = 0;
+        player.GetComponent<PlayerController>().MoveFlag = false;
 
         // 再生から指定された時間後、フェードイン
         FadePanelManager.instance.FadeIn();
         yield return new WaitForSecondsRealtime(fadeStartTime);
         player.transform.position = climbPos.transform.position;
         FadePanelManager.instance.FadeOut();
+        yield return new WaitForSecondsRealtime(fadeStartTime);
         climbFlag = false;
-        Time.timeScale = 1;
+        player.GetComponent<PlayerController>().MoveFlag = true;
 
         yield return null;
     }

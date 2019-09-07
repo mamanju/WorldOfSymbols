@@ -8,9 +8,6 @@ public class FadePanelManager : SingletonMonoBehaviour<FadePanelManager>
     // アルファ値
     private float alfa;
 
-    [SerializeField]
-    private Image FadePanel; 
-
     #region Singleton
     public static FadePanelManager instance;
     public static FadePanelManager Instance
@@ -62,12 +59,10 @@ public class FadePanelManager : SingletonMonoBehaviour<FadePanelManager>
     /// </summary>
     /// <returns></returns>
     private IEnumerator FadeInCoroutine()
-    {
-        FadePanel.gameObject.SetActive(true);
-        
+    {   
         while(alfa < 1)
         {
-            FadePanel.color += new Color(0, 0, 0, 0.01f);
+            GetComponent<CanvasGroup>().alpha += 0.01f;
             alfa += 0.01f;
             yield return null;
         }
@@ -82,7 +77,7 @@ public class FadePanelManager : SingletonMonoBehaviour<FadePanelManager>
     {
         while (alfa >= 0)
         {
-            FadePanel.color -= new Color(0, 0, 0, 0.01f);
+            GetComponent<CanvasGroup>().alpha -= 0.01f;
             alfa -= 0.01f;
             yield return null;
         }
