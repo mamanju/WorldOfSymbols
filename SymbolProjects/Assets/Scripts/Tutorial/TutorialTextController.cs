@@ -41,7 +41,7 @@ public class TutorialTextController : MonoBehaviour
         get { return endDisplay; }
     }
 
-    private bool[] tutorial_Flag = new bool[13];
+    private bool[] tutorial_Flag = new bool[14];
     public bool[] GetTutorial_Flag
     {
         get { return tutorial_Flag; }
@@ -120,10 +120,10 @@ public class TutorialTextController : MonoBehaviour
         sentence[7] = "クリスタルを使って\n剣以外の武器を作ってみよう！\n△ボタンで合成画面が開くよ！";
         sentence[8] = "十字キーでクリスタルを選んで\n○ボタンで決定だよ！";
         sentence[9] = "合成できる組み合わせだと\n表示が変わるよ!\n□ボタンで合成できるよ！";
-        sentence[10] = "×ボタンで合成画面が閉じるよ";
+        sentence[10] = "×ボタンで合成画面を閉じてね！";
         sentence[11] = "R1、L1で武器を切り替えられるよ\n武器にはそれぞれ個性があるよ！";
         sentence[12] = "OPTIONSで操作を確認できるよ！";
-        sentence[13] = "チュートリアルを終了するよ！";
+        sentence[13] = "チュートリアルを終了するよ！\n○ボタンでゲームが始まるよ！";
     }
     private void DisplaySentence()
     {

@@ -12,9 +12,9 @@ public class SceneController : SingletonMonoBehaviour<SceneController>
     {
         Title,
         Tutorial,
-        StageSelect,
+        //StageSelect,
         StageFirst,
-        StageSecond,
+        //StageSecond,
         BossStage,
         Result,
     }

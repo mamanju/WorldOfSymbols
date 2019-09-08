@@ -50,7 +50,23 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(tutorial_Flag[13])
+        {
+            if (!PlayerController.instance.MoveFlag)
+            {
+                //Scene切り替え
+                if (Input.GetButtonDown("Circle"))
+                {
+                    SceneController.Instance.ChangeScene(SceneController.SceneName.StageFirst);
+                }
+            }
+            else
+            {
+                PlayerController.instance.MoveFlag = false;
+            }
+            return;
+        }
+        
         //カメラ移動
         TextChange(0);
         if (Input.GetAxis("Horizontal_R") != 0)
@@ -139,13 +155,8 @@ public class TutorialController : MonoBehaviour
 
         TextChange(11);
 
+        if (!tutorial_Flag[12]) { return; }
         TextChange(12);
-
-        //Scene切り替え
-        if (tutorial_Flag[13] == true)
-        {
-            SceneController.Instance.ChangeScene(SceneController.SceneName.StageFirst);
-        }
     }
 
     public void TextChange(int _num)

@@ -56,6 +56,8 @@ public class GrowTreeController : MonoBehaviour
             yield return null;
         }
 
+        GetComponent<AudioSource>().Play();
+
         // 成長した木を生成、苗を削除
         growTree.SetActive(true);
         Destroy(Seedling);

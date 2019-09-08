@@ -43,6 +43,8 @@ public class CamerCtrl : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (!PlayerController.instance.MoveFlag) { return; }
+
         if (Time.timeScale == 0) { return; }
 
         lookPos = player.transform.position + new Vector3(0, 1, 0);
