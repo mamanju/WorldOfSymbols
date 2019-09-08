@@ -39,7 +39,14 @@ public class EnemyController : EnemyManager
         {
             anim.SetInteger(key_Health, 0);
             DropCrystal();
-            Enemy_SoundManager.instance.PlaySE_enemy(1);
+            if (gameObject.name == "Boss")
+            {
+                Enemy_SoundManager.instance.PlaySE_enemy(4);
+            }
+            else
+            {
+                Enemy_SoundManager.instance.PlaySE_enemy(1);
+            }
             if (SceneManager.GetActiveScene().name == ("Tutorial"))
             {
                 TutorialController.instance.EnemyDown = true;
@@ -48,7 +55,14 @@ public class EnemyController : EnemyManager
             return gameObject;
         }
         Health -= damage;
-        Enemy_SoundManager.instance.PlaySE_enemy(0);
+        if (gameObject.name == "Boss")
+        {
+            Enemy_SoundManager.instance.PlaySE_enemy(3);
+        }
+        else
+        {
+            Enemy_SoundManager.instance.PlaySE_enemy(0);
+        }
         anim.SetTrigger("Damage");
         return null;
     }
