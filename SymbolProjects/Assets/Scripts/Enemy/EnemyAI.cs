@@ -36,6 +36,8 @@ public class EnemyAI : MonoBehaviour
     private float resetAttackTime = 0.17f;
     private bool isAttackAnim;
 
+    private AudioSource audio;
+
     void Start()
     {
         currentState = AIState.isIdle;
@@ -43,6 +45,8 @@ public class EnemyAI : MonoBehaviour
 
         anim = GetComponent<Animator>();
         attackAnimTime = resetAttackTime;
+
+        audio = transform.parent.GetComponent<AudioSource>();
     }
 
      void Update()
@@ -59,11 +63,11 @@ public class EnemyAI : MonoBehaviour
             PlayerController.instance.GetComponent<PlayerStatus>().DownHP(attack);
             if (gameObject.name == "Boss")
             {
-                Enemy_SoundManager.instance.PlaySE_enemy(5);
-            }
+                audio.GetComponent<Enemy_SoundManager>().PlaySE_enemy(5);
+            }   
             else
-            {
-                Enemy_SoundManager.instance.PlaySE_enemy(2);
+            {   
+                audio.GetComponent<Enemy_SoundManager>().PlaySE_enemy(2);
             }
         }
 

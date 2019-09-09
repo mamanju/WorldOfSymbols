@@ -44,7 +44,14 @@ public class SetSynthesisCrystal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty) { return; }
+        if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty)
+        {
+            if (synthesisBoxes.GetComponent<SynthesisController>().EndFlag == true)
+            {
+                synthesisBoxes.GetComponent<SynthesisController>().EndSynthesis();
+            }
+            return;
+        }
         if (synthesisBoxes.GetComponent<SynthesisController>().EndFlag == false){ return; }
         else
         {

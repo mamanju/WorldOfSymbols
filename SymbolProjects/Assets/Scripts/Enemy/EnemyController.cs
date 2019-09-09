@@ -10,10 +10,12 @@ public class EnemyController : EnemyManager
 {
     private string key_Health = "Health";
     private Animator anim;
+    private AudioSource audio;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        audio = transform.parent.GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -41,11 +43,11 @@ public class EnemyController : EnemyManager
             DropCrystal();
             if (gameObject.name == "Boss")
             {
-                Enemy_SoundManager.instance.PlaySE_enemy(4);
+                audio.GetComponent<Enemy_SoundManager>().PlaySE_enemy(4);
             }
             else
             {
-                Enemy_SoundManager.instance.PlaySE_enemy(1);
+                audio.GetComponent<Enemy_SoundManager>().PlaySE_enemy(1);
             }
             if (SceneManager.GetActiveScene().name == ("Tutorial"))
             {
@@ -57,11 +59,11 @@ public class EnemyController : EnemyManager
         Health -= damage;
         if (gameObject.name == "Boss")
         {
-            Enemy_SoundManager.instance.PlaySE_enemy(3);
+            audio.GetComponent<Enemy_SoundManager>().PlaySE_enemy(3);
         }
         else
         {
-            Enemy_SoundManager.instance.PlaySE_enemy(0);
+            audio.GetComponent<Enemy_SoundManager>().PlaySE_enemy(0);
         }
         anim.SetTrigger("Damage");
         return null;
