@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MatlManager : MonoBehaviour
 {
-    private static int[] nowMatl = new int[] { 2, 1, 0, 1 };
+    private static int[] nowMatl = new int[] { 0, 0, 0, 0 };
     public static int[] NowMatl
     {
         get { return nowMatl; }
@@ -23,6 +24,11 @@ public class MatlManager : MonoBehaviour
     //リストの初期化
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "StageFirst")
+        {
+            nowMatl = new int[] { 0, 0, 0, 0 };
+        }
+
         for (int i = 0; i < matlBox.Length; i++)
         {
             matlBox[i] = matlBoxes.transform.GetChild(i).gameObject;
