@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -39,17 +40,16 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name == "StageFirst")
+        {
+            hp = max_hp;
+        }
         weaponAttacks[0] = 1 + attack;
         weaponAttacks[1] = 2 + attack;
         weaponAttacks[2] = 3 + attack;
         weaponAttacks[3] = -1 + attack;
         weaponAttacks[5] = -1 + attack;
 
-        //完成する当たり使用するかも
-        for (int i = 0; i < 6; i++)
-        {
-        }
-            Debug.Log(AxInfo.attack);
         nowAttack = weaponAttacks[0];
     }
 
