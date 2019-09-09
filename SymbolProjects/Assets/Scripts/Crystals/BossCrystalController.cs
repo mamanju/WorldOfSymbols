@@ -18,6 +18,6 @@ public class BossCrystalController : MonoBehaviour
     }
 
     private void OnDestroy() {
-
+        clearPanel.SetActive(true);
     }
 }
