@@ -8,7 +8,9 @@ public class EnemyRespawn : MonoBehaviour
 
     private bool isSpawn = false;
 
-    private string monsterPath = "Prefabs/Enemies/slime_";
+    private string monsterPath = "Prefabs/Enemies/Slime";
+
+    private string pare = "_Parent";
 
     private float timer;
 
@@ -21,8 +23,7 @@ public class EnemyRespawn : MonoBehaviour
 
     void Start() {
         isSpawn = false;
-        eManager = transform.parent.GetComponent<EnemyManager>();
-        transform.SetParent(transform.parent.transform.parent.transform.parent.transform.parent);
+        eManager = transform.parent.GetComponentInChildren<EnemyController>();
     }
 
     void Update() {
@@ -36,27 +37,27 @@ public class EnemyRespawn : MonoBehaviour
     }
 
     public void ReSpawn() {
-        Debug.Log("call");
         string path = "";
         switch (eManager.crystal) {
             case EnemyManager.Crystals.Circle: // Blue
-                path = monsterPath + "B";
+                path = monsterPath + "Blue" + pare;
                 break;
             case EnemyManager.Crystals.LessThan: // Yellow
-                path = monsterPath + "Y";
+                path = monsterPath + "Yellow" + pare;
                 break;
             case EnemyManager.Crystals.Stick: // Green
-                path = monsterPath + "G";
+                path = monsterPath + "Green" + pare;
                 break;
             case EnemyManager.Crystals.Triangle: // Red
-                path = monsterPath + "R";
+                path = monsterPath + "Rad" + pare;
                 break;
             default:
                 break;
         }
+        
         GameObject monster = Resources.Load(path) as GameObject;
         Instantiate(monster);
         monster.transform.position = transform.position;
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

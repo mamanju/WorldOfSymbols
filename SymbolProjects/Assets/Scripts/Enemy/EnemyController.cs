@@ -11,11 +11,13 @@ public class EnemyController : EnemyManager
     private string key_Health = "Health";
     private Animator anim;
     private AudioSource audio;
+    private EnemyRespawn resPoint;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         audio = transform.parent.GetComponent<AudioSource>();
+        resPoint = transform.parent.GetComponentInChildren<EnemyRespawn>();
     }
 
     /// <summary>
@@ -81,5 +83,6 @@ public class EnemyController : EnemyManager
         Debug.Log("local" + transform.localPosition);
         cry.transform.localScale = new Vector3(1, 1, 1);
         cry.GetComponent<CapsuleCollider>().enabled = false;
+        resPoint.setIsSpawn = true;
     }
 }
