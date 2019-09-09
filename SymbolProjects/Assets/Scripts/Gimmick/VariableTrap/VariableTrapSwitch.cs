@@ -7,12 +7,12 @@ public class VariableTrapSwitch : MonoBehaviour
     [SerializeField]
     private GameObject Fires;
 
-    private float deleteDistance = 2f;
+    private float deleteDistance = 3f;
     private float deleteTime = 2f;
 
     public void StopFire() {
         GetComponent<AudioSource>().Play();
-
+        StartCoroutine(DeleteCrystal());
         for(int i = 0; i < Fires.transform.childCount; i++) {
             if (Fires.transform.GetChild(i).GetChild(0).GetComponent<VariableTrap>()) {
                 Debug.Log("OK");
@@ -26,7 +26,7 @@ public class VariableTrapSwitch : MonoBehaviour
 
     private IEnumerator DeleteCrystal()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < 6; i++)
         {
             GameObject crystal = transform.GetChild(i).gameObject;
             crystal.GetComponent<Rigidbody>().isKinematic = false;
