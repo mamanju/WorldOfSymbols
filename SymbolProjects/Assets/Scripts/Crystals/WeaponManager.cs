@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class WeaponManager : MonoBehaviour
     
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name == "StageFirst")
+        {
+            nowWeapon = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        }
+
         for (int i = 0; i < weaponBoxes.transform.childCount; i++)
         {
             weaponBox[i] = weaponBoxes.transform.GetChild(i).gameObject;

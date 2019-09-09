@@ -186,7 +186,6 @@ public class SynthesisController : MonoBehaviour
         {
             Debug.Log("失敗");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.empty;
-            endFlag = false;
         }
     }
 
@@ -198,6 +197,7 @@ public class SynthesisController : MonoBehaviour
             matlCrystals[i].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
             inputMatl[i] = 0;
         }
+        endFlag = false;
         startSynthesis = false;
         changeFin = false;
     }
