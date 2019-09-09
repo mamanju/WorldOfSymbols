@@ -1156,11 +1156,6 @@ PrefabInstance:
       propertyPath: PatrolPoints.Array.data[5]
       value: 
       objectReference: {fileID: 175195323}
-    - target: {fileID: 2600424384256657815, guid: 6b7e09ed9706d6640a051c612193602b,
-        type: 3}
-      propertyPath: health
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7e09ed9706d6640a051c612193602b, type: 3}
 --- !u!1001 &1246498905
