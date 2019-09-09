@@ -22,7 +22,7 @@ public class EnemyRespawn : MonoBehaviour
     void Start() {
         isSpawn = false;
         eManager = transform.parent.GetComponent<EnemyManager>();
-        transform.SetParent(transform.parent.transform.parent);
+        transform.SetParent(transform.parent.transform.parent.transform.parent.transform.parent);
     }
 
     void Update() {
