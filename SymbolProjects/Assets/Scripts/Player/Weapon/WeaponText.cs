@@ -67,9 +67,9 @@ public class WeaponText : MonoBehaviour
     public void WeaponTextSet()
     {
         sentence[(int)WeaponInfo.WeaponList.sword] = "【ソード】\nただの剣。\nなぜか壊れない。";
-        sentence[(int)WeaponInfo.WeaponList.spear] = "【スピア】\nR2で投げられそうだ。";
-        sentence[(int)WeaponInfo.WeaponList.ax] = "【アックス】\n木が切れそうだ。";
-        sentence[(int)WeaponInfo.WeaponList.shield] = "【シールド】\nすべての攻撃が防げる。";
+        sentence[(int)WeaponInfo.WeaponList.spear] = "【スピア】\nリーチの長い槍。\nR2で投げられそうだ。";
+        sentence[(int)WeaponInfo.WeaponList.ax] = "【アックス】\n攻撃力の高い斧。\n木が切れそうだ。";
+        sentence[(int)WeaponInfo.WeaponList.shield] = "【シールド】\n堅い盾。\nすべての攻撃が防げる。";
         //WeaponInfo.WeaponList.twinSword
         sentence[(int)WeaponInfo.WeaponList.cymbal] = "【シンバル】\n大きな音で敵がびっくりする。\n木が好みそうな音色だ。";
         //WeaponInfo.WeaponList.hammer
