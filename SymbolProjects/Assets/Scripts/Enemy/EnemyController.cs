@@ -17,7 +17,10 @@ public class EnemyController : EnemyManager
     {
         anim = GetComponent<Animator>();
         audio = transform.parent.GetComponent<AudioSource>();
-        resPoint = transform.parent.GetComponentInChildren<EnemyRespawn>();
+        if (transform.parent.GetComponentInChildren<EnemyRespawn>()) {
+            resPoint = transform.parent.GetComponentInChildren<EnemyRespawn>();
+        }
+        
     }
 
     /// <summary>
@@ -83,6 +86,9 @@ public class EnemyController : EnemyManager
         Debug.Log("local" + transform.localPosition);
         cry.transform.localScale = new Vector3(1, 1, 1);
         cry.GetComponent<CapsuleCollider>().enabled = false;
-        resPoint.setIsSpawn = true;
+        if(resPoint != null) {
+            resPoint.setIsSpawn = true;
+        }
+        
     }
 }
