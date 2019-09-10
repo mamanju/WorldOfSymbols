@@ -57,7 +57,7 @@ public class EnemyRespawn : MonoBehaviour
         
         GameObject monster = Resources.Load(path) as GameObject;
         Instantiate(monster);
-        monster.transform.position = transform.position;
+        monster.transform.localPosition = transform.localPosition;
         Destroy(transform.parent.gameObject);
     }
 }
