@@ -48,6 +48,7 @@ public class ClimbTreeController : MonoBehaviour
         yield return new WaitForSecondsRealtime(fadeStartTime);
         climbFlag = false;
         player.GetComponent<PlayerController>().MoveFlag = true;
+        
 
         yield return null;
     }
