@@ -3056,7 +3056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crystal: 5
-  health: 50
+  health: 30
   attack: 3
   attackSpeed: 7
   moveSpeed: 1
