@@ -20,7 +20,7 @@ public class PauseController : MonoBehaviour
     [SerializeField]
     private Image[] SelectButtons;
 
-    private int buttonNum = 0;
+    private int buttonNum = 1;
 
     private bool pauseFlag = false;
     private bool gameOverFlag = false;
@@ -46,7 +46,7 @@ public class PauseController : MonoBehaviour
         {
             gameClearUI.SetActive(true);
         }
-        if (Input.GetButtonDown("Option"))
+        if (Input.GetButtonDown("Option") || Input.GetKeyDown(KeyCode.L))
         {
             Pause();
         }
