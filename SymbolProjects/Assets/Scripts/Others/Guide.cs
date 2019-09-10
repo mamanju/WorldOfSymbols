@@ -23,7 +23,6 @@ public class Guide : MonoBehaviour
     void Update()
     {
         transform.LookAt(Camera.main.transform);
-        Debug.Log(guide[3]);
     }
 
     private void GuideSentence()

@@ -11,6 +11,19 @@ public class PlayerStatus : MonoBehaviour
     private GameObject gameOverImage;
     [SerializeField]
     private GameObject gameClearImage;
+    [SerializeField]
+    private GameObject UISet;
+    [SerializeField]
+    private GameObject minimap;
+
+    public GameObject UISET {
+        get { return UISet; }
+        set { UISet = value; }
+    }
+    public GameObject Minimap {
+        get { return minimap; }
+        set { minimap = value; }
+    }
 
     public GameObject GameClearImage {
         get { return gameClearImage; }
@@ -81,13 +94,28 @@ public class PlayerStatus : MonoBehaviour
     {
         pCon = GetComponent<PlayerController>();
         if (pCon.ShildFlag) { return; }
-        hp -= _damage;
         Player_SoundManager.instance.PlaySE_player(3);
-        if(hp <= 0)
-        {
+        if (hp - _damage <= 0) {
             gameOverImage.GetComponent<PauseController>().GameOver();
+            UISet.SetActive(false);
+            if (minimap != null) {
+                minimap.SetActive(false);
+            }
             Time.timeScale = 0;
+            return;
         }
+
+        hp -= _damage;
+        
+        //if(hp <= 0)
+        //{
+        //    gameOverImage.GetComponent<PauseController>().GameOver();
+        //    UISet.SetActive(false);
+        //    if(minimap != null) {
+        //        minimap.SetActive(false);
+        //    }
+        //    Time.timeScale = 0;
+        //}
         knockBack = GetComponent<KnockBack>();
         knockBack.Knockback();
     }

@@ -20,6 +20,7 @@ public class BossCrystalController : MonoBehaviour
     private void OnDestroy() {
         clearPanel = GameObject.FindObjectOfType<PlayerStatus>().gameObject;
         clearPanel.GetComponent<PlayerStatus>().GameClearImage.SetActive(true);
+        clearPanel.GetComponent<PlayerStatus>().UISET.SetActive(false);
         clearPanel.SetActive(true);
     }
 }

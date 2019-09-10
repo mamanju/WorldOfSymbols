@@ -15,9 +15,6 @@ public class PauseController : MonoBehaviour
     private GameObject gameOverUI;
 
     [SerializeField]
-    private GameObject gameClearUI;
-
-    [SerializeField]
     private Image[] SelectButtons;
 
     private int buttonNum = 1;
@@ -25,27 +22,16 @@ public class PauseController : MonoBehaviour
     private bool pauseFlag = false;
     private bool gameOverFlag = false;
     private bool selectFlag = false;
-    private bool clearFlag = false;
 
-    public bool ClearFlag {
-        get { return clearFlag; }
-        set { clearFlag = value; }
-    }
     // Start is called before the first frame update
     void Awake()
     {
         pauseUI.SetActive(false);
         gameOverUI.SetActive(false);
-        gameClearUI.SetActive(false);
     }
 
     private void Update() {
 
-
-        if (clearFlag)
-        {
-            gameClearUI.SetActive(true);
-        }
         if (Input.GetButtonDown("Option") || Input.GetKeyDown(KeyCode.L))
         {
             Pause();
@@ -53,9 +39,6 @@ public class PauseController : MonoBehaviour
 
         #region 十字キー操作
         if (Input.GetButtonDown("Circle")) {
-            if (clearFlag) {
-                SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
-            }
 
             if (!pauseFlag) {
                 return;
