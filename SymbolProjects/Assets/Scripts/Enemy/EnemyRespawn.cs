@@ -54,8 +54,7 @@ public class EnemyRespawn : MonoBehaviour
             default:
                 break;
         }
-        GameObject monster = new GameObject();
-        monster = Resources.Load(path) as GameObject;
+        GameObject monster = Resources.Load(path) as GameObject;
         Instantiate(monster,transform.position,Quaternion.identity);
         Destroy(transform.parent.gameObject);
     }
