@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CamerCtrl : MonoBehaviour
 {
@@ -43,7 +44,10 @@ public class CamerCtrl : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (!PlayerController.instance.MoveFlag) { return; }
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            if (!PlayerController.instance.MoveFlag) { return; }
+        }
 
         if (Time.timeScale == 0) { return; }
 
