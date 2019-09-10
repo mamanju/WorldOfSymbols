@@ -7,6 +7,10 @@ using UnityEngine;
 /// </summary>
 public class TitleManager : MonoBehaviour
 {
+    private void Start() {
+        Time.timeScale = 1;
+    }
+
     private void Update() {
         if (Input.GetButtonDown("Circle") || Input.GetKeyDown(KeyCode.O)) {
             MoveSelect();

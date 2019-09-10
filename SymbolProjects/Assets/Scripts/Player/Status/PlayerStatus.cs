@@ -9,6 +9,14 @@ public class PlayerStatus : MonoBehaviour
 
     [SerializeField]
     private GameObject gameOverImage;
+    [SerializeField]
+    private GameObject gameClearImage;
+
+    public GameObject GameClearImage {
+        get { return gameClearImage; }
+        set { gameClearImage = value; }
+    }
+
     public static int PlayerHp()
     {
         return hp;
@@ -77,6 +85,7 @@ public class PlayerStatus : MonoBehaviour
         if(hp <= 0)
         {
             gameOverImage.GetComponent<PauseController>().GameOver();
+            Time.timeScale = 0;
         }
         knockBack = GetComponent<KnockBack>();
         knockBack.Knockback();

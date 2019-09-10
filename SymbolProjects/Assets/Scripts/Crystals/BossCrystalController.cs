@@ -8,7 +8,7 @@ public class BossCrystalController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        clearPanel = GameObject.FindObjectOfType<ClearPanelController>().gameObject;
+        
     }
 
     // Update is called once per frame
@@ -18,6 +18,8 @@ public class BossCrystalController : MonoBehaviour
     }
 
     private void OnDestroy() {
+        clearPanel = GameObject.FindObjectOfType<PlayerStatus>().gameObject;
+        clearPanel.GetComponent<PlayerStatus>().GameClearImage.SetActive(true);
         clearPanel.SetActive(true);
     }
 }

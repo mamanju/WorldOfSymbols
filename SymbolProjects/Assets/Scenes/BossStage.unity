@@ -1860,6 +1860,11 @@ PrefabInstance:
       propertyPath: gameClearUI
       value: 
       objectReference: {fileID: 1162693239}
+    - target: {fileID: 5613068583359658402, guid: b73c3211a31ef04448b4c3f1a903160c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6237401070052290551, guid: b73c3211a31ef04448b4c3f1a903160c,
         type: 3}
       propertyPath: m_IsActive
@@ -2000,6 +2005,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a39ab37a6325aa438496a92d9868228, type: 3}
+--- !u!1 &1428128141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5613068583359658402, guid: b73c3211a31ef04448b4c3f1a903160c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1246498905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1627138355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2253,6 +2264,16 @@ PrefabInstance:
       propertyPath: weaponBoxes
       value: 
       objectReference: {fileID: 578920585}
+    - target: {fileID: 2169706574673601585, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: gameOverImage
+      value: 
+      objectReference: {fileID: 1428128141}
+    - target: {fileID: 2169706574673601585, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: gameClearImage
+      value: 
+      objectReference: {fileID: 1162693239}
     - target: {fileID: 9148503624342840499, guid: aae0e75300eba994391b8c46e75f4a32,
         type: 3}
       propertyPath: synthesisGUI
