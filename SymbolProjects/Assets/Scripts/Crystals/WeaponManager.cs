@@ -22,7 +22,8 @@ public class WeaponManager : MonoBehaviour
     
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "StageFirst")
+        if (SceneManager.GetActiveScene().name == "StageFirst"
+            || SceneManager.GetActiveScene().name == "Tutorial")
         {
             nowWeapon = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         }

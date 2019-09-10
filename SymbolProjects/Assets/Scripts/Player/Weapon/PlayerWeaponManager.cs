@@ -10,7 +10,7 @@ public class PlayerWeaponManager : MonoBehaviour
     private GameObject[] weapons = new GameObject[10];
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         for (int i = 0; i < weapons.Length; i++)
         {

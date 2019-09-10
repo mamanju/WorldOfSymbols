@@ -29,7 +29,7 @@ public class Guide : MonoBehaviour
     private void GuideSentence()
     {
         guide[0] = "この木は斧を使えば切れそうだ";
-        guide[1] = "この木は□ボタンで登れそうだ";
+        guide[1] = "近づくと登れそうだ";
         guide[2] = "あのクリスタルは槍を使えば破壊出来そうだ";
         guide[3] = "あと" + growCount.ToString() + "回シンバルをたたくと\n木が成長しそうだ";
         guide[4] = "";

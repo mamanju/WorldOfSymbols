@@ -24,7 +24,8 @@ public class MatlManager : MonoBehaviour
     //リストの初期化
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "StageFirst")
+        if (SceneManager.GetActiveScene().name == "StageFirst"
+            || SceneManager.GetActiveScene().name == "Tutorial")
         {
             nowMatl = new int[] { 0, 0, 0, 0 };
         }

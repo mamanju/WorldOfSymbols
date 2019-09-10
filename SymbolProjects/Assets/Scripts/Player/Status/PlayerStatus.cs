@@ -48,7 +48,8 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "StageFirst")
+        if (SceneManager.GetActiveScene().name == "StageFirst"
+            || SceneManager.GetActiveScene().name == "Tutorial")
         {
             hp = max_hp;
         }
