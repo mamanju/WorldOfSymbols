@@ -311,24 +311,24 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        // 木登り
-        if (Input.GetButtonDown("Square"))
-        {
-            boxCollider.enabled = true;
-            climbFlag = true;
-            climbClliderTimeFlag = true;
-        }
-        // 木登り用のコライダーを一瞬だけ出して消す
-        if (climbClliderTimeFlag)
-        {
-            climbClliderTime -= Time.deltaTime;
-            if (climbClliderTime <= 0)
-            {
-                boxCollider.enabled = false;
-                climbFlag = false;
-                climbClliderTime = max_climbClliderTime;
-            }
-        }
+        //// 木登り
+        //if (Input.GetButtonDown("Square"))
+        //{
+        //    boxCollider.enabled = true;
+        //    climbFlag = true;
+        //    climbClliderTimeFlag = true;
+        //}
+        //// 木登り用のコライダーを一瞬だけ出して消す
+        //if (climbClliderTimeFlag)
+        //{
+        //    climbClliderTime -= Time.deltaTime;
+        //    if (climbClliderTime <= 0)
+        //    {
+        //        boxCollider.enabled = false;
+        //        climbFlag = false;
+        //        climbClliderTime = max_climbClliderTime;
+        //    }
+        //}
     }
 
     void FixedUpdate()
