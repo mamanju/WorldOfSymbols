@@ -34,7 +34,6 @@ public class ShieldInfo : WeaponController
 
     public void DelWeaponDurable()
     {
-        Debug.Log("durable=" + durable);
         if (durable <= 0) { return; }
         base.BreakWeaponCheck(1);
         if (durable == 0)

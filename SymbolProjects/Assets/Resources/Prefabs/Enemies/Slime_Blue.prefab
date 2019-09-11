@@ -432,8 +432,8 @@ MonoBehaviour:
   agent: {fileID: 2897420484142493267}
   currentState: 0
   waitAtPoint: 2
-  chaseRange: 3
-  attackRange: 2
+  chaseRange: 3.5
+  attackRange: 3
   timeBetweenAttacks: 2
 --- !u!1 &4244770347851335093
 GameObject:

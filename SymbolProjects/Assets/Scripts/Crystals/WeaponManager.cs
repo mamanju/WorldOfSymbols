@@ -25,7 +25,7 @@ public class WeaponManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "StageFirst"
             || SceneManager.GetActiveScene().name == "Tutorial")
         {
-            nowWeapon = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            nowWeapon = new int[] { 0, 0, 2, 0, 0, 0, 0, 0, 0 };
         }
 
         for (int i = 0; i < weaponBoxes.transform.childCount; i++)

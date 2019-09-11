@@ -184,7 +184,6 @@ public class SynthesisController : MonoBehaviour
         //レシピNo.0は失敗
         else
         {
-            Debug.Log("失敗");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.empty;
         }
     }

@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     //playerのrigidbody
     private Rigidbody playerRb;
 
-    //ポーズUI
+    //合成画面
     [SerializeField]
     private GameObject synthesisGUI;
     private GameObject matlBoxes;
@@ -122,6 +122,8 @@ public class PlayerController : MonoBehaviour
     private string key_ShildLoop = "ShildLoop";
 
     [SerializeField]
+    private GameObject barrier;
+    [SerializeField]
     private float spearThrowTime = 2.0f;
     private float max_spearThrowTime;
     private bool spearThrowTimeFlag = false;
@@ -178,6 +180,8 @@ public class PlayerController : MonoBehaviour
 
         boxCollider = GetComponent<BoxCollider>();
         climbClliderTime = max_climbClliderTime;
+
+        barrier.SetActive(false);
     }
 
     private void Awake()
@@ -196,6 +200,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        //合成画面を開く
         if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Triangle") && synthesisGUI.activeSelf == false)
         {
             synthesisGUI.SetActive(!synthesisGUI.activeSelf);
@@ -206,9 +211,10 @@ public class PlayerController : MonoBehaviour
                 this.GetComponent<WeaponManager>().HaveWeapon();
             }
         }
-
+        //合成画面を閉じる
         if (Input.GetButtonDown("Cross") && synthesisGUI.activeSelf == true)
         {
+            if (synthesisBoxes.GetComponent<SynthesisController>().EndFlag) { return; }
             synthesisGUI.SetActive(!synthesisGUI.activeSelf);
             Time.timeScale = 1.0f;
             resetFlag = false;
@@ -290,6 +296,7 @@ public class PlayerController : MonoBehaviour
                 shildFlag = true;
                 playerAnime.SetBool(key_ShildAttack, true);
                 playerAnime.SetBool(key_ShildLoop, true);
+                barrier.SetActive(true);
             }
 
             if (Input.GetButtonUp("Circle"))
@@ -299,6 +306,7 @@ public class PlayerController : MonoBehaviour
                 playerAnime.SetBool(key_ShildLoop, false);
                 DownDurable();
                 attackFlag = true;
+                barrier.GetComponent<ShieldFade>().SetEndEffect();
             }
         }
 
@@ -499,16 +507,6 @@ public class PlayerController : MonoBehaviour
                  other.GetComponent<CutTreeController>().SetFallFlag = true;
              }
         }
-        else if (playerStatus.NowWeaponID == 5)
-        {
-             //成長するギミックの木のタグ
-             if(other.tag == "Tree")
-             {
-                 //中身よろしくお願いします！！！！
-                 //タグの変更もお願いしますm(__)m
-             }
-          
-        }
     }
 
     //武器の耐久値減少
@@ -521,7 +519,6 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "ClimbTree" && climbFlag)
         {
-        Debug.Log("木");
             playerAnime.SetTrigger(key_Climb);
             other.GetComponent<ClimbTreeController>().Climb(gameObject);
             boxCollider.enabled = false;

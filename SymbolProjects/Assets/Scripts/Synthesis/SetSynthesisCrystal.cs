@@ -69,7 +69,6 @@ public class SetSynthesisCrystal : MonoBehaviour
             {
                 if ((int)this.GetComponent<WeaponInfo>().weaponList == i && endWeaponMove == false)
                 {
-                    Debug.Log(i);
                     WeaponManager.NowWeapon[i - 1]++;
                     endWeaponMove = true;
                     weaponBox[i - 1].GetComponent<WeaponInfo>().weaponList

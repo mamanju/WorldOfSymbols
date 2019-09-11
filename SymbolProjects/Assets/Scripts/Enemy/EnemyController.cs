@@ -82,8 +82,6 @@ public class EnemyController : EnemyManager
         GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
         cry.transform.localPosition = new Vector3(0,0,0);
         cry.transform.SetParent(transform.parent);
-        Debug.Log(transform.position);
-        Debug.Log("local" + transform.localPosition);
         cry.transform.localScale = new Vector3(1, 1, 1);
         cry.GetComponent<CapsuleCollider>().enabled = false;
         if(resPoint != null) {
