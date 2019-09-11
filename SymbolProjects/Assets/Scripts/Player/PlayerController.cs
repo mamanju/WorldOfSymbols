@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     private GameObject synthesisBoxes;
     private GameObject synthesisCrystal;
     private bool resetFlag;
+    private bool pauzeFlag;
 
     //カメラの向きを取得
     private Vector3 cameraForward;
@@ -65,6 +66,11 @@ public class PlayerController : MonoBehaviour
     public int GetWeaponNumber
     {
         get { return weaponNumber; }
+    }
+
+    public bool PauzeFlag {
+        get { return pauzeFlag; }
+        set { pauzeFlag = value; }
     }
 
     private int weaponLength;

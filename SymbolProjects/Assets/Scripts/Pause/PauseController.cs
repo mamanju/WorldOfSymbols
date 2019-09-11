@@ -17,11 +17,12 @@ public class PauseController : MonoBehaviour
     [SerializeField]
     private Image[] SelectButtons;
 
-    private int buttonNum = 1;
+    private int buttonNum = 0;
 
     private bool pauseFlag = false;
     private bool gameOverFlag = false;
     private bool selectFlag = false;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Awake()
@@ -30,31 +31,34 @@ public class PauseController : MonoBehaviour
         gameOverUI.SetActive(false);
     }
 
-    private void Update() {
+    void Start() {
+        player = GameObject.Find("Player");
+        pauseFlag = player.GetComponent<PlayerController>().PauzeFlag;
+    }
 
+    private void Update() {
         if (Input.GetButtonDown("Option") || Input.GetKeyDown(KeyCode.L))
         {
             Pause();
         }
 
+        
+
         #region 十字キー操作
         if (Input.GetButtonDown("Circle")) {
-
             if (!pauseFlag) {
                 return;
             }
             if (buttonNum == 0) {
+                Time.timeScale = 1;
                 SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
             } else {
                 Pause();
             }
         }
 
-        if (!pauseFlag) {
-            return;
-        }
+    
 
-        Debug.Log(Input.GetAxis("CrossKey_H"));
         if (Input.GetAxis("CrossKey_H") == 0) {
             selectFlag = false;
             return;
@@ -64,24 +68,20 @@ public class PauseController : MonoBehaviour
             return;
         }
 
-        if (gameOverFlag)
-        {
-            if (Input.GetButtonDown("Circle"))
-            {
-                SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
-            }
-        }
-
         if (Input.GetAxis("CrossKey_H") < 0) {
             if (buttonNum - 1 < 0) {
+                
                 buttonNum = 1;
             } else {
+                
                 buttonNum--;
             }
         } else {
             if (buttonNum + 1 > 1) {
+                
                 buttonNum = 0;
             } else {
+                
                 buttonNum++;
             }
         }
