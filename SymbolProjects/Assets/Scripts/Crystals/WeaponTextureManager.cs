@@ -28,7 +28,7 @@ public class WeaponTextureManager : MonoBehaviour
 
     private void Start()
     {
-        this.GetComponent<Image>().color = Color.clear;
+        this.GetComponent<Image>().color = Color.gray;
     }
 
     private void Update()
@@ -95,7 +95,14 @@ public class WeaponTextureManager : MonoBehaviour
         }
         else
         {
-            thisImage.color = Color.clear;
+            if (gameObject.name == "SynthesisCrystal")
+            {
+                thisImage.color = Color.clear;
+            }
+            else
+            {
+                thisImage.color = Color.gray;
+            }
         }
     }
 }

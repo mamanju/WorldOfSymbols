@@ -127,6 +127,7 @@ public class PlayerController : MonoBehaviour
     private string key_SpearThrow = "SpearThrow";
     private string key_ShildLoop = "ShildLoop";
 
+    private bool isAttack;
     [SerializeField]
     private GameObject barrier;
     [SerializeField]
@@ -249,8 +250,9 @@ public class PlayerController : MonoBehaviour
                 synthesisCtrl.EndFlag = true;
             }
             //リセット
-            if (Input.GetButtonDown("Triangle") || Input.GetKeyDown(KeyCode.I))
+            if (Input.GetButtonDown("Triangle"))
             {
+                if (synthesisBoxes.GetComponent<SynthesisController>().EndFlag) { return; }
                 if (resetFlag)
                 {
                     synthesisCtrl.ResetCrystal();
@@ -319,6 +321,7 @@ public class PlayerController : MonoBehaviour
         //攻撃
         if ((Input.GetButtonDown("Circle")) && weaponNumber != 3 && attackFlag)
         {
+            isAttack = true;
             attackFlag = false;
             playerAnime.SetTrigger(key_Attack);
             GetComponent<weapon_collider>().SetCollider_Flag = true;
@@ -490,6 +493,7 @@ public class PlayerController : MonoBehaviour
     //武器の耐久値の減少
     public void Attack(GameObject other)
     {
+        if (!isAttack) { return; }
         //DownDurable();
         if(weaponNumber < 3 || weaponNumber == 5)
         {
@@ -513,6 +517,7 @@ public class PlayerController : MonoBehaviour
                  other.GetComponent<CutTreeController>().SetFallFlag = true;
              }
         }
+        isAttack = false;
     }
 
     //武器の耐久値減少
