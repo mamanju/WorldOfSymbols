@@ -479,7 +479,7 @@ public class PlayerController : MonoBehaviour
     //武器の耐久値の減少
     public void Attack(GameObject other)
     {
-        if (!isAttack) { return; }
+        //if (!isAttack) { return; }
         //DownDurable();
         if(weaponNumber < 3 || weaponNumber == 5)
         {
