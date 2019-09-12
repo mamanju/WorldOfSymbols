@@ -7,6 +7,17 @@ TagManager:
   - Ground
   - Crystal
   - Enemy
+  - GrowTree
+  - Fire
+  - FireSwitch
+  - ClimbTree
+  - FallTree
+  - Tree
+  - FireGuide
+  - FallTreeGuide
+  - ClimbTreeGuide
+  - FireSwitchGuide
+  - GrowTreeGuide
   layers:
   - Default
   - TransparentFX
@@ -19,11 +30,11 @@ TagManager:
   - PostProcessing
   - Shield
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
+  - StageCollider
+  - GuidePanel
+  - GuideCol
+  - SoundCol
+  - Player
   - 
   - 
   - 
