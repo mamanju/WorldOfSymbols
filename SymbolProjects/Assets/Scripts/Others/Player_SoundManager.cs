@@ -21,6 +21,6 @@ public class Player_SoundManager : MonoBehaviour
     public void PlaySE_player(int _num)
     {
         seSources.clip = clips_SE_player[_num];
-        seSources.Play();
+        seSources.PlayOneShot(clips_SE_player[_num]);
     }
 }

@@ -62,7 +62,6 @@ public class Guide : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
         guideText.text = guide[4];
     }
 }
