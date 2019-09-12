@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5785062607111779654}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Position2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 2792262259968485644}
   - component: {fileID: 2459262226471258722}
   - component: {fileID: 6211861227470650997}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SlimeRad_Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5867830470569684532}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Position1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7611256999621237659}
   - component: {fileID: 8401353012353735607}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RespownPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

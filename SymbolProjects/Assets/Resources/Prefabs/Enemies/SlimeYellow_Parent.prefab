@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 460296704591783372}
   - component: {fileID: 5133676317847070398}
   - component: {fileID: 6651145209068256140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SlimeYellow_Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5941886604622378041}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Position2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1987819913017956236}
   - component: {fileID: 4524830039040979207}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RespownPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5124457420429446374}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Position1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

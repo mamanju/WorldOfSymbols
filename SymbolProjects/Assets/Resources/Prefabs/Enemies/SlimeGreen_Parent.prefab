@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5811111354810555070}
   - component: {fileID: 8857914629205720782}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RespownPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 3864075664794743385}
   - component: {fileID: 2568878658027825402}
   - component: {fileID: 3413442259504030825}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SlimeGreen_Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7268971613977081915}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Position1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 406991882003084390}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Position2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,6 +263,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3864075664794743385}
     m_Modifications:
+    - target: {fileID: 117283750973454990, guid: 9e390619ce4e88045831967f542ae786,
+        type: 3}
+      propertyPath: m_Name
+      value: Slime_Greeen
+      objectReference: {fileID: 0}
     - target: {fileID: 117283750973613742, guid: 9e390619ce4e88045831967f542ae786,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -317,11 +322,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 117283750973454990, guid: 9e390619ce4e88045831967f542ae786,
-        type: 3}
-      propertyPath: m_Name
-      value: Slime_Greeen
       objectReference: {fileID: 0}
     - target: {fileID: 7004831444877792198, guid: 9e390619ce4e88045831967f542ae786,
         type: 3}

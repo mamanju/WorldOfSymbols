@@ -4067,6 +4067,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5613068583359658402, guid: b73c3211a31ef04448b4c3f1a903160c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7286670679528600149, guid: b73c3211a31ef04448b4c3f1a903160c,
         type: 3}
       propertyPath: m_IsActive
@@ -4076,11 +4081,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameClear
-      objectReference: {fileID: 0}
-    - target: {fileID: 5613068583359658402, guid: b73c3211a31ef04448b4c3f1a903160c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b73c3211a31ef04448b4c3f1a903160c, type: 3}
@@ -8055,26 +8055,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5330930925866024533, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: synthesisGUI
-      value: 
-      objectReference: {fileID: 1506004064}
-    - target: {fileID: 5330930925866024533, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: nowWeapon_S
-      value: 
-      objectReference: {fileID: 1770806300}
-    - target: {fileID: 9181239352857341891, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: synthesisGUI
-      value: 
-      objectReference: {fileID: 1506004064}
-    - target: {fileID: 9181239352857341891, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: nowWeapon_S
-      value: 
-      objectReference: {fileID: 1770806300}
     - target: {fileID: 2169706574673601586, guid: aae0e75300eba994391b8c46e75f4a32,
         type: 3}
       propertyPath: matlBoxes
@@ -8100,66 +8080,16 @@ PrefabInstance:
       propertyPath: minimap
       value: 
       objectReference: {fileID: 698422248}
-    - target: {fileID: 9148503624342840499, guid: aae0e75300eba994391b8c46e75f4a32,
+    - target: {fileID: 5330930925866024533, guid: aae0e75300eba994391b8c46e75f4a32,
         type: 3}
       propertyPath: synthesisGUI
       value: 
       objectReference: {fileID: 1506004064}
-    - target: {fileID: 9148503624342840499, guid: aae0e75300eba994391b8c46e75f4a32,
+    - target: {fileID: 5330930925866024533, guid: aae0e75300eba994391b8c46e75f4a32,
         type: 3}
       propertyPath: nowWeapon_S
       value: 
       objectReference: {fileID: 1770806300}
-    - target: {fileID: 1061679631690958199, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2397910637348921116, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8230065992745476852, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: firstBridge
-      value: 
-      objectReference: {fileID: 1279338615}
-    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: secondBridge
-      value: 
-      objectReference: {fileID: 1899011509}
-    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: crystal
-      value: 
-      objectReference: {fileID: 649039547}
-    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: bossGate
-      value: 
-      objectReference: {fileID: 434977158}
-    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: growTree
-      value: 
-      objectReference: {fileID: 362442463}
-    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: climbTree
-      value: 
-      objectReference: {fileID: 1016499544}
-    - target: {fileID: 2076041466784789390, guid: aae0e75300eba994391b8c46e75f4a32,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
 --- !u!1001 &1158724326
