@@ -32,6 +32,50 @@ Transform:
   m_Father: {fileID: 6575395601622927200}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!1 &6533723437993609676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8595299410539363285}
+  - component: {fileID: 8087049024106669063}
+  m_Layer: 13
+  m_Name: FallTreeGuide
+  m_TagString: FallTreeGuide
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8595299410539363285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533723437993609676}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.24427235, y: 11.762268, z: 0.2644354}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1814541170188391274}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8087049024106669063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533723437993609676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: 8, y: -2, z: -4}
 --- !u!1 &6575395601622571840
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +118,7 @@ BoxCollider:
   m_GameObject: {fileID: 6575395601622571840}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 20, y: 20, z: 20}
   m_Center: {x: 8, y: -2, z: -4}
@@ -876,7 +920,7 @@ GameObject:
   - component: {fileID: 6575395601620632990}
   - component: {fileID: 7774539752915736953}
   - component: {fileID: 4658061214114205003}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: stump
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -968,7 +1012,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.5, z: 2}
+  m_Size: {x: 2.5, y: 1.5, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8345515619926246704
 GameObject:
@@ -979,7 +1023,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1814541170188391274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DestroyObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,6 +1050,7 @@ Transform:
   - {fileID: 6575395601622927228}
   - {fileID: 6575395601622927204}
   - {fileID: 6575395601622927206}
+  - {fileID: 8595299410539363285}
   m_Father: {fileID: 3107513768360178691}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -36,7 +36,7 @@ public class Guide : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "FallTree")
+        if (other.tag == "FallTreeGuide")
         {
             guideText.text = guide[0];
         }

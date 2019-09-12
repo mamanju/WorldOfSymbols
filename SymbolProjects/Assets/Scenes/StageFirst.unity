@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -786,6 +786,8 @@ GameObject:
   - component: {fileID: 113191216}
   - component: {fileID: 113191215}
   - component: {fileID: 113191214}
+  - component: {fileID: 113191218}
+  - component: {fileID: 113191217}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -818,8 +820,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25, y: 25, z: 25}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 24.27042, y: 25, z: 22.512804}
+  m_Center: {x: -0.36478996, y: 0, z: 1.2436076}
 --- !u!23 &113191215
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -865,6 +867,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113191212}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &113191217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113191212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13, y: 5, z: 5}
+  m_Center: {x: 3, y: -5, z: -13}
+--- !u!65 &113191218
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113191212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 18}
+  m_Center: {x: 12, y: -5, z: 2}
 --- !u!1001 &132299062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8341,8 +8369,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230179999}
-  m_LocalRotation: {x: 0.0062728953, y: -0.09702973, z: 0.0006098082, w: 0.99526155}
-  m_LocalPosition: {x: -58.925648, y: 2.635408, z: 6.494201}
+  m_LocalRotation: {x: -0.20671168, y: 0, z: 0, w: 0.9784019}
+  m_LocalPosition: {x: -115.45, y: 0.3000002, z: -28.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10416,7 +10444,7 @@ PrefabInstance:
     - target: {fileID: 3115895905663283199, guid: 251e157d91bdf7f4a9e59997e9b09ce3,
         type: 3}
       propertyPath: m_Center.y
-      value: 1.1794229
+      value: 1.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251e157d91bdf7f4a9e59997e9b09ce3, type: 3}

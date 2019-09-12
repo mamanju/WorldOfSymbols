@@ -19,6 +19,8 @@ public class CutTreeController : MonoBehaviour
     [SerializeField]
     private float fallSpeed;
 
+    private bool completeFlag = false;
+
     private bool fallFlag = false;
 
     public bool SetFallFlag
@@ -38,6 +40,7 @@ public class CutTreeController : MonoBehaviour
     /// </summary>
     public void CutTree()
     {
+        if (completeFlag) { return; }
         if (!fallFlag) { return; }
         fallFlag = false;
         StartCoroutine(CutreeCoroutine());
@@ -59,6 +62,7 @@ public class CutTreeController : MonoBehaviour
             fallTree.transform.Rotate(rotateX, 0, 0);
             yield return null;
         }
+        completeFlag = true;
         Destroy(destroyTree);
     }
 }

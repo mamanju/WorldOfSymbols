@@ -138,6 +138,7 @@ public class PlayerController : MonoBehaviour
     private bool secondSpearPreventFlag = true;
 
     private bool moveFlag = true;
+    private bool wallFlag = false;
 
     /// <summary>
     /// プレイヤー移動のコントローラー操作フラグ
@@ -326,26 +327,6 @@ public class PlayerController : MonoBehaviour
             playerAnime.SetTrigger(key_Attack);
             GetComponent<weapon_collider>().SetCollider_Flag = true;
         }
-
-
-        //// 木登り
-        //if (Input.GetButtonDown("Square"))
-        //{
-        //    boxCollider.enabled = true;
-        //    climbFlag = true;
-        //    climbClliderTimeFlag = true;
-        //}
-        //// 木登り用のコライダーを一瞬だけ出して消す
-        //if (climbClliderTimeFlag)
-        //{
-        //    climbClliderTime -= Time.deltaTime;
-        //    if (climbClliderTime <= 0)
-        //    {
-        //        boxCollider.enabled = false;
-        //        climbFlag = false;
-        //        climbClliderTime = max_climbClliderTime;
-        //    }
-        //}
     }
 
     void FixedUpdate()
@@ -385,6 +366,11 @@ public class PlayerController : MonoBehaviour
             speedForce += cameraForward.normalized * _vertical 
                 + Camera.main.transform.right.normalized * _horizontal;
             speedForce = speedForce * speed * Time.deltaTime;
+
+            if (wallFlag) {
+                playerRb.velocity = new Vector3(0, -3.0f, 0);
+                return;
+            }
 
             if (knockbackFlag != true)
             {
@@ -511,6 +497,7 @@ public class PlayerController : MonoBehaviour
         
         if (playerStatus.NowWeaponID == 2)
         {
+            Debug.Log("Call!!! = " + other.gameObject.name);
              //切って橋にする木のタグ
              if(other.tag == "Tree")
              {
@@ -549,6 +536,14 @@ public class PlayerController : MonoBehaviour
         {
             playerAnime.SetTrigger(key_Climb);
             col.GetComponent<ClimbTreeController>().Climb(gameObject);
+        }
+    }
+
+    private void OnCollisionStay(Collision col) {
+        if(!groundFlag && col.gameObject.layer == LayerMask.NameToLayer("StageCollider")) {
+            wallFlag = true;
+        } else {
+            wallFlag = false;
         }
     }
 }
