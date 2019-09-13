@@ -19,6 +19,13 @@ public class SceneController : SingletonMonoBehaviour<SceneController>
         Result,
     }
 
+    private bool changeFlag = false;
+
+    public bool ChangeFlag {
+        get { return changeFlag; }
+        set { changeFlag = value; }
+    }
+
     private bool isFading = false;
 
     // 遷移の時間

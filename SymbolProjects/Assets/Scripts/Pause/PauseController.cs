@@ -29,6 +29,7 @@ public class PauseController : MonoBehaviour
     {
         pauseUI.SetActive(false);
         gameOverUI.SetActive(false);
+        SceneController.Instance.ChangeFlag = false;
     }
 
     void Start() {
@@ -51,6 +52,7 @@ public class PauseController : MonoBehaviour
             }
             if (buttonNum == 0) {
                 Time.timeScale = 1;
+                SceneController.Instance.ChangeFlag = true;
                 SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
             } else {
                 Pause();
