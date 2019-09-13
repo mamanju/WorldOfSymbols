@@ -45,6 +45,7 @@ public class TutorialController : MonoBehaviour
         crystal.SetActive(false);
         slime_enemy.SetActive(false);
         tutorial_Flag = tutorialTextController.GetTutorial_Flag;
+        SceneController.Instance.ChangeFlag = false;
     }
 
     // Update is called once per frame
@@ -57,6 +58,8 @@ public class TutorialController : MonoBehaviour
                 //Scene切り替え
                 if (Input.GetButtonDown("Circle"))
                 {
+                    if (SceneController.Instance.ChangeFlag) { return; }
+                    SceneController.Instance.ChangeFlag = true;
                     SceneController.Instance.ChangeScene(SceneController.SceneName.StageFirst);
                 }
             }

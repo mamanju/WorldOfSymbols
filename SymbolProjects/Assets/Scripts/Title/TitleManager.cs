@@ -9,6 +9,7 @@ public class TitleManager : MonoBehaviour
 {
     private void Start() {
         Time.timeScale = 1;
+        SceneController.Instance.ChangeFlag = false;
     }
 
     private void Update() {
@@ -20,6 +21,8 @@ public class TitleManager : MonoBehaviour
     /// ステージセレクトへ遷移
     /// </summary>
     public void MoveSelect() {
+        if (SceneController.Instance.ChangeFlag) { return; }
+        SceneController.Instance.ChangeFlag = true;
         SceneController.Instance.ChangeScene(SceneController.SceneName.Tutorial);
     }
 }
